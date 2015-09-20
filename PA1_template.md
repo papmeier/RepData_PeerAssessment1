@@ -126,7 +126,7 @@ sum(!complete.cases(df_data))
 ## [1] 2304
 ```
 
-I imputed the missing values with the mean for the time interval.
+I imputed the missing values with the mean for the time interval. To achieve this I checked for each row if the variable steps was NA and if that was the case replaced it by the mean for that time interval.
 
 
 ```r

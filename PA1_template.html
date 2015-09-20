@@ -123,7 +123,7 @@ aggregated_by_day &lt;- df_data %&gt;%
 <p>The number of cases with NA values are:</p>
 <pre class="r"><code>sum(!complete.cases(df_data))</code></pre>
 <pre><code>## [1] 2304</code></pre>
-<p>I imputed the missing values with the mean for the time interval.</p>
+<p>I imputed the missing values with the mean for the time interval. To achieve this I checked for each row if the variable steps was NA and if that was the case replaced it by the mean for that time interval.</p>
 <pre class="r"><code>imputed_data &lt;- proc_data
 for(row in 1:nrow(imputed_data)) {
     if(is.na(imputed_data[row, &quot;steps&quot;])) {
