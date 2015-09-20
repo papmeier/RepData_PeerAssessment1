@@ -56,7 +56,7 @@ The following plot shows a histogram of the total number of steps per day:
 
 
 ```r
-hist(aggregated_by_day$sum_steps)
+hist(aggregated_by_day$sum_steps, xlab="Total steps per day", main="Histogram of total steps per day")
 ```
 
 ![](PA1_template_files/figure-html/unnamed-chunk-4-1.png) 
@@ -97,7 +97,7 @@ Then next plot shows the mean steps per time interval:
 
 
 ```r
-plot(aggregated_by_interval$interval, aggregated_by_interval$mean_steps, type="l")
+plot(aggregated_by_interval$interval, aggregated_by_interval$mean_steps, type="l", xlab="5-minute time interval", ylab="Mean of steps", main="Daily activity pattern")
 ```
 
 ![](PA1_template_files/figure-html/unnamed-chunk-7-1.png) 
@@ -156,7 +156,7 @@ The histogram for the total number of steps per day shows more total steps. This
 
 
 ```r
-hist(imp_agg_by_day$sum_steps)
+hist(imp_agg_by_day$sum_steps, xlab="Total steps per day", main="Histogram of total steps per day")
 ```
 
 ![](PA1_template_files/figure-html/unnamed-chunk-12-1.png) 
@@ -212,8 +212,10 @@ Last I plotted the daily activity patterns for both subsets:
 
 ```r
 par(mfcol=c(2,1))
-plot(imp_agg_by_interval$interval[weekdays], imp_agg_by_interval$mean_steps[weekdays], type="l")
-plot(imp_agg_by_interval$interval[weekend], imp_agg_by_interval$mean_steps[weekend], type="l")
+plot(imp_agg_by_interval$interval[weekdays], imp_agg_by_interval$mean_steps[weekdays], type="l", 
+     xlab="5-minute time interval", ylab="Mean of steps")
+plot(imp_agg_by_interval$interval[weekend], imp_agg_by_interval$mean_steps[weekend], type="l", 
+     xlab="5-minute time interval", ylab="Mean of steps")
 ```
 
 ![](PA1_template_files/figure-html/unnamed-chunk-16-1.png) 
